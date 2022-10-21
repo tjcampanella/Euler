@@ -1,8 +1,4 @@
-(ns e1.core)
-
-(defn -main
-  [& args]
-  (println "Hello World"))
+(ns e1.core "Multiples of 3 and 5")
 
 (defn gen-mul-seq [step]
   (range step 1000 step))
