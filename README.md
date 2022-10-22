@@ -1,1 +1,1 @@
-# Projectt Euler Solutions in Clojure
+# Project Euler Solutions in Clojure
