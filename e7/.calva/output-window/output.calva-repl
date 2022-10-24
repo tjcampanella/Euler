@@ -1,0 +1,119 @@
+; This is the Calva evaluation results output window.
+; TIPS: The keyboard shortcut `ctrl+alt+o o` shows and focuses this window
+;   when connected to a REPL session.
+; Please see https://calva.io/output/ for more info.
+; Happy coding! ♥️
+
+; Jacking in...
+; Starting Jack-in Terminal: lein update-in :dependencies conj '[nrepl,"1.0.0"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.28.5"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉e7.core꞉>  ; Use `alt+enter` to evaluate
+; Jack-in done.
+clj꞉e7.core꞉> 
+[2 3 5 7]
+clj꞉e7.core꞉> 
+[2 3 5 7 9 11 13 15 17]
+clj꞉e7.core꞉> 
+2
+3
+4
+5
+[2 3 5 7 8 9 11 13 14 15 17]
+clj꞉e7.core꞉> 
+0
+; IndexOutOfBoundsException   clojure.lang.RT.nthFrom (RT.java:885)
+clj꞉e7.core꞉> 
+2
+3
+4
+5
+[3 5 7 8 9 11 13 14 15 17]
+clj꞉e7.core꞉> 
+2
+3
+[3 5 7 8 9 11 13 14 15 17]
+clj꞉e7.core꞉> 
+(4 6 8 10 12 14 16 18 20 22)
+clj꞉e7.core꞉> 
+2
+3
+[3 5 7 8 9 11 13 14 15 17]
+clj꞉e7.core꞉> 
+2
+3
+(4 6 8 10 12 14 16 18 20 22)
+clj꞉e7.core꞉> 
+2
+3
+[1 2 3 5 7 8 9 11 13 14 15 17]
+clj꞉e7.core꞉> 
+2
+3
+[1 2 3 5 7 8 9 11 13 14 15 17]
+clj꞉e7.core꞉> 
+2
+3
+[3 5 7 8 9 11 13 14 15 17]
+clj꞉e7.core꞉> 
+2
+3
+[3 5 7 8 9 11 13 14 15 17]
+clj꞉e7.core꞉> 
+4.47213595499958
+clj꞉e7.core꞉> 
+4
+clj꞉e7.core꞉> 
+#object["[Z" 0x73d225c5 "[Z@73d225c5"]
+#object["[Z" 0x73d225c5 "[Z@73d225c5"]
+#object["[Z" 0x73d225c5 "[Z@73d225c5"]
+#object["[Z" 0x73d225c5 "[Z@73d225c5"]
+[3 5 7 8 9 11 13 14 15 17]
+clj꞉e7.core꞉> 
+(#object["[Z" 0x71ecbfa2 "[Z@71ecbfa2"])
+(#object["[Z" 0x71ecbfa2 "[Z@71ecbfa2"])
+(#object["[Z" 0x71ecbfa2 "[Z@71ecbfa2"])
+(#object["[Z" 0x71ecbfa2 "[Z@71ecbfa2"])
+[3 5 7 8 9 11 13 14 15 17]
+clj꞉e7.core꞉> 
+[true true true true true true true true true true true true true true true true true true true true]
+[true true true true false true false true false true false true false true false true false true false true]
+[true true true true false true false true false false false true false true false false false true false true]
+[true true true true false true false true false false false true false true false false false true false true]
+[3 5 7 8 9 11 13 14 15 17]
+clj꞉e7.core꞉> 
+[true true true true true true true true true true true true true true true true true true true true]
+[true true true true false true false true false true false true false true false true false true false true]
+[true true true true false true false true false false false true false true false false false true false true]
+[true true true true false true false true false false false true false true false false false true false true]
+[4 6 8 9 10 12 14 15 16 18]
+clj꞉e7.core꞉> 
+[true true true true true true true true true true true true true true true true true true true true]
+[true true true true false true false true false true false true false true false true false true false true]
+[true true true true false true false true false false false true false true false false false true false true]
+[true true true true false true false true false false false true false true false false false true false true]
+[3 5 7 8 9 11 13 14 15 17]
+clj꞉e7.core꞉> 
+[true true true true true true true true true true true true true true true true true true true true]
+[true true true true false true false true false true false true false true false true false true false true]
+[true true true true false true false true false false false true false true false false false true false true]
+[true true true true false true false true false false false true false true false false false true false true]
+[0 1 2 3 5 7 11 13 17 19]
+clj꞉e7.core꞉> 
+[2 3 5 7 11 13 17 19]
+clj꞉e7.core꞉> 
+; CompilerException java.lang.RuntimeException: Unable to resolve symbol: sieve in this context, compiling:(/Users/tjcampanella/Desktop/repos/Euler/e7/src/e7/core.clj:21:8) 
+clj꞉e7.core꞉> 
+168
+clj꞉e7.core꞉> 
+1229
+clj꞉e7.core꞉> 
+9592
+clj꞉e7.core꞉> 
