@@ -18,3 +18,4 @@ tests: FORCE
 	cd e6 && lein spec
 	cd e7 && lein spec
 	cd e8 && lein spec
+	cd e9 && lein spec

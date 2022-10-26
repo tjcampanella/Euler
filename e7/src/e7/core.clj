@@ -17,3 +17,5 @@
                                       (recur multiples (inc idx) (nth multiples (inc idx))))))
                               (recur bools (inc i)))
       :else  (recur bools (inc i)))))
+
+(sieve 100000)
