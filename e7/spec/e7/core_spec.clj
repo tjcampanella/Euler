@@ -4,7 +4,7 @@
 
 (s/describe "Sieve"
             (s/it "Primes between 2 and 7"
-                  (s/should= [2 3 5] (sieve 7)))
+                  (s/should= [2 3 5 7] (sieve 7)))
             (s/it "Primes between 2 and 20"
                   (s/should= [2 3 5 7 11 13 17 19] (sieve 20)))
             (s/it "Primes between 2 and 30"
