@@ -1,6 +1,6 @@
 FORCE:
 
-prod: tests github 
+prod: tests github
 
 commit: tests
 	git add . && git commit -a
@@ -9,7 +9,7 @@ github: FORCE
 	git add .
 	git commit -a
 	git push
-	
+
 tests: FORCE
 	cd e1 && lein spec
 	cd e2 && lein spec
@@ -20,3 +20,4 @@ tests: FORCE
 	cd e8 && lein spec
 	cd e9 && lein spec
 	cd e10 && lein test
+	cd e11 && lein spec

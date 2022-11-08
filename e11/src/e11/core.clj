@@ -12,7 +12,7 @@
 (defn greatest-prod-in-row
   [row]
   (->> row
-       (partition 4 1 [1])
+       (partition 4 1 [0])
        (map #(reduce * %))
        (flatten)
        (apply max)))
@@ -41,9 +41,10 @@
 (defn diagnols [grid]
   (let [top-left (top-diagnols grid)
         top-right (top-diagnols (reverse grid))
-        bottom-left (bottom-diagnols grid)
-        bottom-right (bottom-diagnols (reverse grid))]
-    (distinct (remove empty? (concat top-left top-right bottom-left bottom-right)))))
+        bottom-left (top-diagnols (reverse (transpose (reverse (transpose data)))))
+        bottom-right (top-diagnols (reverse (transpose (reverse (transpose data)))))
+        other (top-diagnols (transpose (reverse data)))]
+    (distinct (remove empty? (concat top-left top-right bottom-left bottom-right other)))))
 
 (defn greatest-prod-adj-horizontally [grid]
   (let  [res (map greatest-prod-in-row grid)]
@@ -62,9 +63,3 @@
        (greatest-prod-adj-vertically grid)
        (greatest-prod-adj-diagnolly grid)))
 
-
-(greatest-prod-adj-horizontally data)
-(greatest-prod-adj-vertically data)
-(greatest-prod-adj-diagnolly data)
-
-(diagnols data)

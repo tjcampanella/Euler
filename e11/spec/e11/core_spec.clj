@@ -2,8 +2,10 @@
   (:require [speclj.core :refer [describe it should=]]
             [e11.core :refer [greatest-prod-adj-horizontally
                               greatest-prod-adj-vertically
+                              greatest-prod-adj
                               diagnols
-                              transpose]]))
+                              transpose
+                              data]]))
 
 (describe "Greatest product adjacent horizontally"
           (it "Should be 0"
@@ -45,34 +47,11 @@
           (it "Should be 4"
               (should= 4 (greatest-prod-adj-vertically [[2] [1] [2] [1] [2] [1] [2]])))
           (it "Should be 6561"
-              (should= 6561 (greatest-prod-adj-vertically [[2 1 2 9 2 1 2]
-                                                           [8 2 2 9 1 1 1]
-                                                           [9 2 2 9 1 1 1]
-                                                           [9 2 2 9 1 1 1]]))))
+              (should= 6561 (greatest-prod-adj-vertically [[2 1 2 9]
+                                                           [8 2 2 9]
+                                                           [9 2 2 9]
+                                                           [9 2 2 9]]))))
 
-(describe "Should turn a list of rows into a list of diganols"
-          (it "Should be []"
-              (should= [] (diagnols [])))
-          (it "Should be [[1]]"
-              (should= [[1]] (diagnols [[1]])))
-          (it "Should be [[1 2] [2 7] [2] [7]]"
-              (should= [[1 2] [7] [2 7] [2]] (diagnols [[1 7]
-                                                        [2 2]])))
-          (it "Should be [[1 2 3 1] [7 9 1] [3 7] [5] [2 2 9 5] [2 3 7] [8 1] [1] [1 3 2 1] [1 9 7] [7 3] [5 9 2 2] [7 3 2] [1 8]]"
-              (should= [[1 2 3 1]
-                        [7 9 1]
-                        [3 7]
-                        [5]
-                        [2 2 9 5]
-                        [2 3 7]
-                        [8 1]
-                        [1]
-                        [1 3 2 1]
-                        [1 9 7]
-                        [7 3]
-                        [5 9 2 2]
-                        [7 3 2]
-                        [1 8]] (diagnols [[1 7 3 5]
-                                          [2 2 9 7]
-                                          [2 2 3 1]
-                                          [2 2 8 1]]))))
+(describe "Greatest product adjacent"
+          (it "Should be 70600674"
+              (should= 70600674 (greatest-prod-adj data))))
