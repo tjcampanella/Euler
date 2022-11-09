@@ -22,3 +22,4 @@ tests: FORCE
 	cd e9 && lein spec
 	cd e10 && lein test
 	cd e11 && lein spec
+	cd e12 && lein spec
