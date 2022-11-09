@@ -13,6 +13,7 @@ github: FORCE
 tests: FORCE
 	cd e1 && lein spec
 	cd e2 && lein spec
+	cd e3 && lein spec
 	cd e4 && lein spec
 	cd e5 && lein spec
 	cd e6 && lein spec
