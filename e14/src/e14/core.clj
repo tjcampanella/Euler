@@ -1,24 +1,35 @@
 (ns e14.core "Longest Collatz Sequence")
 
 (defn collatz
-  ([start] (collatz start [] {}))
-  ([start memory]
-   (collatz start [] memory))
-  ([curr res memory]
+  ([start]
+   (collatz start []))
+  ([curr res]
    (cond
-     (contains? memory curr) (concat res (memory curr))
      (= curr 1) (conj res 1)
-     (even? curr) (collatz (/ curr 2) (conj res curr) memory)
-     :else (collatz (inc (* 3 curr)) (conj res curr) memory))))
+     (even? curr) (collatz (/ curr 2) (conj res curr))
+     :else (collatz (inc (* 3 curr)) (conj res curr)))))
 
-(defn find-longest-collatz [limit]
-  (loop [curr-max 1 start-max 1 vals (range 1 limit) memory {}]
-    (let [res (collatz (first vals) memory)
-          length (count res)
-          new-memory (assoc memory (first vals) res)]
+(defn find-longest-collatz-slow [limit]
+  (loop [curr-max 1 start-max 1 vals (range 1 limit)]
+    (let [res (collatz (first vals))
+          length (count res)]
       (cond
         (empty? (rest vals)) [start-max curr-max]
-        (> length curr-max) (recur length (first vals) (rest vals) new-memory)
-        :else (recur curr-max start-max (rest vals) new-memory)))))
+        (> length curr-max) (recur length (first vals) (rest vals))
+        :else (recur curr-max start-max (rest vals))))))
 
-;; (time (find-longest-collatz 1000000))
+(def chain-length
+  (memoize
+   (fn [n]
+     (cond
+       (= n 1) 1
+       (odd? n) (+ 1 (chain-length (+ 1 (* 3 n))))
+       :else     (+ 1 (chain-length (/ n 2)))))))
+
+(defn find-longest-collatz-fast [limit]
+  (loop [curr-max 1 start-max 1 vals (range 1 limit)]
+    (let [length (chain-length (first vals))]
+      (cond
+        (empty? (rest vals)) [start-max curr-max]
+        (> length curr-max) (recur length (first vals) (rest vals))
+        :else (recur curr-max start-max (rest vals))))))

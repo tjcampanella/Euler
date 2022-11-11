@@ -1,6 +1,6 @@
 (ns e14.core-spec
   (:require [speclj.core :refer [describe it should=]]
-            [e14.core :refer [collatz find-longest-collatz]]))
+            [e14.core :refer [collatz find-longest-collatz-fast]]))
 
 (describe "Collatz"
           (it "Should equal collatz sequence starting at 13 "
@@ -8,4 +8,4 @@
 
 (describe "Longest Collatz up to 1M"
           (it "Should equal ? "
-              (should= [837799 525] (find-longest-collatz 1000000))))
+              (should= [837799 525] (find-longest-collatz-fast 1000000))))
